@@ -2,7 +2,7 @@ user:
     username: Pseudo
     email: Email
     password: Mot de Passe
-    agree_terms: Acepter les CGU
+    agree_terms: Accepter les CGU
 
 login:
     login_title: Se Connecter

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Made by Thomas Dubreuil">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Beta{% endblock %}</title>
         {{ encore_entry_link_tags('app') }}
         {% block stylesheets %}{% endblock %}
     </head>
@@ -29,9 +29,9 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="collapse row bg-dark p-2 rounded-bottom" id="collapseProfil">
+            <div class="collapse row bg-darker p-2 rounded-bottom" id="collapseProfil">
                 <div class="col-12 text-right">
-                    <a href="{{ path('app_logout') }}">Deconnexion</a>
+                    <a href="{{ path('app_logout') }}" class="btn btn-lg text-bold">Deconnexion</a>
                 </div>
             </div>
         </header>
