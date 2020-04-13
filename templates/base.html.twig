@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale ? app.request.locale : 'fr' }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Made by Thomas Dubreuil">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {{ encore_entry_link_tags('app') }}
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+        <header class="container mb-5 bg-dark rounded-bottom">
+            <div class="row align-items-center bg-primary rounded-bottom">
+                <div class="col-4">
+                    <a class="text-white logo" href="{{ path('app_home') }}">
+                        <h1 class="display-4">Beta</h1>
+                    </a>
+                </div>
+                <div class="col-8 text-right">
+                    {% if app.user %}
+                        <a data-toggle="collapse" href="#collapseProfil" role="button" aria-expanded="false" aria-controls="collapseProfil">
+                            <img class="avatar" src="{{ app.user.avatar }}" alt="">
+                        </a>
+                    {% else %}
+                        <a href="{{ path('app_login') }}" class="text-white btn btn-lg">
+                            <span class="text-bold">Connexion</span> <i class="fas fa-user-lock h2"></i>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="collapse row bg-dark p-2 rounded-bottom" id="collapseProfil">
+                <div class="col-12 text-right">
+                    <a href="{{ path('app_logout') }}">Deconnexion</a>
+                </div>
+            </div>
+        </header>
+
+        {% block body %}{% endblock %}
+        {{ encore_entry_script_tags('app') }}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

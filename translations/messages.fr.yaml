@@ -1,0 +1,14 @@
+user:
+    username: Pseudo
+    email: Email
+    password: Mot de Passe
+    agree_terms: Acepter les CGU
+
+login:
+    login_title: Se Connecter
+    register_title: Créer un compte gratuitement
+    forgotten_username: Pseudo oublié ?
+    forgotten_password: Mot de passe oublié ?
+    remember_me: Se souvenir de moi
+    get_logged: Connexion
+    get_registerred: Créer un compte

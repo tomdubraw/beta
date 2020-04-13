@@ -1,0 +1,169 @@
+/*
+ * My colors
+ */
+
+$blue: #0091E5;
+$orange: #F75C03;
+$yellow: #FFD400;
+$red: #BF382C;
+$dark: #1B262D;
+$darker: #131E26;
+$darkest: #011826;
+$lighter: #fff;
+//$dark: #2F353F;
+//$darker: #282B33;
+//$darkest: #1C1F26;
+
+/*
+ * Overwrite Bootstrap Theme
+ */
+
+$theme-colors: (
+    "primary": $red,
+    //"secondary": $yellow,
+    "dark": $dark,
+);
+
+$body-bg: $darkest;
+$body-color: $lighter;
+$border-radius: 0.6em;
+
+/**
+ * Fonts
+ */
+
+@font-face {
+    font-family: ballet-harmony;
+    src: url("../fonts/ballet-harmony.ttf");
+}
+
+
+/*
+ * Import Bootstrap
+ * and FontAwesome
+ */
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+
+/*
+ * Custom Style
+ */
+
+body {
+    padding: 0 0.2em;
+    width: 100vw;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+div.container:first-of-type {
+    margin-top: 7rem;
+}
+
+.logo {
+    font-family: ballet-harmony, sans-serif;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.btn {
+    border-radius: $border-radius;
+}
+
+input[type="checkbox"] {
+    display: none;
+
+    & + label {
+        -webkit-user-select: none;
+        cursor: pointer;
+    }
+
+    & + label::before {
+        color: #fff;
+        font-weight: 900;
+        font-family: "Font Awesome 5 Free";
+        content: "\f0c8";
+        padding-right: 0.5em;
+        font-size: 1.2em;
+    }
+
+    &:checked + label::before {
+        color: theme-color(primary);
+        content: "\f14a";
+    }
+}
+
+.avatar {
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0);
+
+    &:hover {
+        border: 1px solid #fff;
+    }
+}
+
+.login-page {
+    & > .d-flex > .flex-fill {
+        background-color: $darker;
+        transition-duration: 0.2s;
+
+        & > button {
+            background: none;
+            border: none;
+            color: $lighter;
+            padding: 0.2em;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: bold;
+            transition-duration: 0.2s;
+
+            @media (min-width: 348px) {
+                padding: 0.6em;
+                font-size: 0.9em;
+            }
+
+            @media (min-width: 400px) {
+                padding: 0.6em;
+                font-size: 1em;
+            }
+
+            @media (min-width: 576px) {
+                padding: 0.7em;
+                font-size: 1.2em;
+            }
+
+            @media (min-width: 768px) {
+                padding: 0.8em;
+                font-size: 1.3em;
+            }
+            
+            &:hover {
+                color: theme-color(primary);
+            }
+        }
+
+        &.text-right {
+            border-radius: $border-radius 0 $border-radius 0;
+        }
+
+        &.text-left {
+            border-radius: 0 $border-radius 0 $border-radius;
+        }
+
+        &.active {
+            background-color: $dark;
+        }
+    }
+}
